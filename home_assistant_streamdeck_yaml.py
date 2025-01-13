@@ -1658,8 +1658,7 @@ def _rgb_to_hex(rgb: tuple[int, int, int]) -> str:
 
 def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
     # Remove '#' if present
-    if hex_color.startswith("#"):
-        hex_color = hex_color[1:]
+    hex_color = hex_color.removeprefix("#")
 
     # Convert hexadecimal to RGB
     r, g, b = tuple(int(hex_color[i : i + 2], 16) for i in (0, 2, 4))
